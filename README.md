@@ -1,11 +1,14 @@
 # ProjetIF2B
+
+##2 personnes
+
 1. Start game
 
 -> Ask board size (6x6 to 12x12)
-    ex : printf();
+    ex : 'printf();
          Do {
          Size = scanf();
-         } With Size control.
+         } With Size control.'
 
     Tab[Size][Size], with  6<Size<12 or 7<13 if we do A B C 1 2 3 borders, or 2x that if |_|.
 
