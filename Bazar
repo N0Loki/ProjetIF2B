@@ -1,0 +1,143 @@
+// ----- Importation des libraires -----
+
+#include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>
+#endif
+#include <windows.h>
+
+// ----- Définitions globales -----
+
+typedef enum {
+    BLACK,
+    BLEU_FONCE,
+    VERT_FONCE,
+    CYAN_FONCE,
+    ROUGE_FONCE,
+    VIOLET,
+    JAUNE_FONCE,
+    GRIS_CLAIR,
+    GRIS_FONCE,
+    BLEU_CLAIR,
+    VERT_CLAIR,
+    CYAN_CLAIR,
+    ROUGE_CLAIR,
+    ROSE,
+    JAUNE,
+    WHITE
+    //0    1           2           3           4            5       6            7           8           9           10          11          12           13    14     15
+} Couleur;
+
+//Création de l'échiquier
+/*
+ *int size_Enter() {
+    int size;
+    char answer;
+    do {
+        printf("\nQuelle taille allant de 6x6 a 12x12 fera le plateau ? [6,7,8,9,10,11,12]\n");
+        scanf("%s", &answer);
+        size = strtol(&answer, NULL, 10);
+    } while (!(size >= 6 || size <= 12));
+    return size;
+}
+*/
+
+void board() {
+    int size;
+    typedef struct {
+        int color;
+        int captured = 3;
+        int contours;
+    }Case;
+
+    Case board[size][size];
+    for (int i = 0; i < size+1; i++) {
+        board[i][1].contours = i+1;
+        board[1][i].contours = i+1;
+    }
+    printf("%d",board[2][2].color);
+}
+
+
+
+//Return white, if 1 then is White, if 0 then is Black.
+int* player_Choice(int* White) {
+    srand(time(NULL));
+    White+=rand()%1;
+    return White;
+}
+
+
+
+void random_Bullshit_In_Test(){
+
+
+
+}
+
+
+
+//Se lance au début du jeu
+void game() {
+
+
+
+/**
+ * Fonction affichant les couleurs sur le texte et le fond
+ * @param texte Couleur choisie pour le texte
+ * @param fond Couleur choisie pour le fond
+ */
+void setColor(Couleur texte, Couleur fond) {
+    HANDLE H = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(H, fond * 16 + texte);
+}
+
+void afficherPlateau(int taille, Piece **board) {
+    const Couleur couleur1 = WHITE, couleur2 = BLEU_FONCE;
+    const char lettres[] = {" abcdefghijkl"};
+    const char pieces[] = {" PFCTDR"};
+    const char couleurs[] = {" BN"};
+    for (int y = 0; y <= taille; y++) {
+        for (int x = 0; x <= taille; ++x) {
+            if (y == 0) {
+                printf(" %c ", lettres[x]);
+            } else {
+                if (x == 0) {
+                    printf(" %d", y);
+                    if (y < 10) printf(" ");
+                } else {
+                    setColor((x + y) % 2 * (couleur1 - couleur2) + couleur2,
+                             (x + y + 1) % 2 * (couleur1 - couleur2) + couleur2);
+                    printf(" %c%c", pieces[board[x - 1][y - 1].typePiece],
+                           couleurs[board[x - 1][y - 1].couleurPiece]);
+                }
+            }
+
+            if (x == taille) printf("\n");
+            setColor(WHITE, BLACK);
+        }
+    }
+}
+
+int main() {
+#ifdef _WIN32
+    SetConsoleOutputCP(CP_UTF8); // Nécessite <windows.h>
+    system("chcp 65001 > nul"); // Active UTF-8 dans la console Windows
+#endif
+    printf("    A    B    C   D    E    F   G   H\n");
+    printf("  +----+---+----+---+----+----+---+----+\n");
+    printf("8 | ♜ | ♞ | ♝ | ♛ | ♚ | ♝ | ♞ | ♜ | 8\n");
+    printf("7 | ♟ | ♟ | ♟ | ♟ | ♟ | ♟ | ♟ | ♟ | 7\n");
+    printf("6 |    |   |    |    |   |    |   |    | 6\n");
+    printf("5 |    |   |    |    |   |    |   |    | 5\n");
+    printf("4 |    |   |    |    |   |    |   |    | 4\n");
+    printf("3 |    |   |    |    |   |    |   |    | 3\n");
+    printf("2 | ♙ | ♙ | ♙ | ♙ | ♙ | ♙ | ♙ | ♙ | 2\n");
+    printf("1 | ♖ | ♘ | ♗ | ♕ | ♔ | ♗ | ♘ | ♖ | 1\n");
+    printf("  +----+---+----+---+----+----+---+----+\n");
+    printf("    A    B    C   D    E    F   G   H\n");
+    for (int i = 1; i <= 8; i++) {
+        printf("♙"); //Affichage pièces restantes en se basant sur un 8 (variable).
+    }
+    return 0;
+}
