@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.30)
+project(ProjetIF2B_Test C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(ProjetIF2B_Test main.c
+        main.c
+        main.h
+        Game.c
+        Game.h
+        saves.c
+        saves.h
+        setup.c
+        setup.h
+        Moves.c
+        Moves.h
+)
