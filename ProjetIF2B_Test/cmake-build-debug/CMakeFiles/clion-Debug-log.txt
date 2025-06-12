@@ -1,4 +1,0 @@
-"C:\Users\Julie\AppData\Local\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Users/Julie/AppData/Local/JetBrains/CLion 2024.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\Julie\CLionProjects\ProjetIF2B_Test -B C:\Users\Julie\CLionProjects\ProjetIF2B_Test\cmake-build-debug
--- Configuring done (0.5s)
--- Generating done (0.2s)
--- Build files have been written to: C:/Users/Julie/CLionProjects/ProjetIF2B_Test/cmake-build-debug
