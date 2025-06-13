@@ -4,7 +4,8 @@ Par Manon Hubert et Julien Oudot
 
 
 Fonctionne sur Linux et Windows
-Légèremment plus propre en changeant la police de la console par une police monospacée type consolas
+
+Affichage légèremment plus propre en changeant la police de la console par une police monospacée type consolas
 
 La capture des pions se fait dans le sens logique de leurs couleurs, et en diagonale (case d'attaques des pions)
 
