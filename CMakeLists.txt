@@ -5,7 +5,6 @@ set(CMAKE_C_STANDARD 99)
 
 add_executable(ProjetIF2B_Rendu main.c
         main.c
-        main.h
         Game.c
         Game.h
         saves.c
