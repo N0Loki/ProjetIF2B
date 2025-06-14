@@ -101,6 +101,7 @@ Case** create_board(int size) {
     for (int i = 0; i < size; i++) {
         for (int j = 0; j < size; j++) {
             board[i][j].contenu = VIDE;
+            board[i][j].captureeParPiece = VIDE;
             board[i][j].couleurPiece = NONE;
             board[i][j].captured = NONE;
         }

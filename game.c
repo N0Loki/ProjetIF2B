@@ -205,7 +205,7 @@ void gameEnd(int taille, Case **board) {
  *
  */
 int gameTurn(int joueur, int taille, int modeJeu, int totalPieces[3][7], Case **board) {
-    int choix = 0;
+    int choix = 0, roiPose = 0;
     char answer;
 
     while (1) {
@@ -234,8 +234,11 @@ int gameTurn(int joueur, int taille, int modeJeu, int totalPieces[3][7], Case **
         switch (choix) {
             case 1:
                 if (reste_piece(joueur, totalPieces)) {
-                    joueur = tour_joueur_poser_piece(joueur, taille, modeJeu, totalPieces, board);
+                    joueur = tour_joueur_poser_piece(joueur, taille, modeJeu, &roiPose, totalPieces, board);
                     afficherPlateau(taille, board);
+                } else if (roiPose == 1) {
+                    printf("\nLe roi %s a été posé, la partie est terminée\n", joueur == BLANC ? "Blanc" : "Noir");
+                    return 0;
                 } else {
                     printf("\nVous n'avez plus de pièces à poser !\n");
                 }
@@ -288,7 +291,7 @@ void game(int menu) {
     }
     afficherPlateau(taille, board);
     int aSauvegarde = gameTurn(joueur, taille, modeJeu, totalPieces, board);
-    if (aSauvegarde == 0) {
+    if (aSauvegarde == 0) { //si flag = 0, pas besoin de dire score car juste sauvegarde
         scorer(taille, board);
     }
     gameEnd(taille, board);

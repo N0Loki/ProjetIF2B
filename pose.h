@@ -116,10 +116,11 @@ void demanderPosition(int tailleEchiquier, int *x, int *y);
  * @param joueur Couleur du joueur actuel (BLANC ou NOIR)
  * @param taille Taille du plateau de jeu
  * @param modeJeu Mode de jeu (1 = Conquête, 2 = Connecté)
+ * @param roiPose Flag indiquant si le roi a été posé en mode 2
  * @param totalPieces Tableau contenant les pièces restantes pour chaque joueur [3][7]
  * @param board Plateau de jeu (tableau 2D de cases)
  * @return Couleur du joueur suivant (BLANC ou NOIR)
  */
-int tour_joueur_poser_piece(int joueur, int taille, int modeJeu, int totalPieces[3][7], Case **board);
+int tour_joueur_poser_piece(int joueur, int taille, int modeJeu, int* roiPose, int totalPieces[3][7], Case **board);
 
 #endif
