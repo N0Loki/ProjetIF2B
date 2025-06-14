@@ -201,7 +201,7 @@ TypePiece demanderPiece(int joueur, int totalPieces[3][7]) {
         if (totalPieces[joueur][piece] > 0) {
             return piece;
         }
-        printf("\nVous n'avez plus de %s.\n", reponsePiece);
+            printf("\nVous n'avez plus de %s.\n", reponsePiece);
     }
 }
 
@@ -225,8 +225,7 @@ void demanderPosition(int tailleEchiquier, int *x, int *y) {
 
         if (*x >= 0 && *x < tailleEchiquier && *y >= 0 && *y < tailleEchiquier)
             break;
-        else
-            printf("Coordonnées invalides, réessayez.\n");
+        printf("Coordonnées invalides, réessayez.\n");
     }
 }
 
