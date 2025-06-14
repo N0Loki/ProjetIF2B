@@ -200,9 +200,8 @@ TypePiece demanderPiece(int joueur, int totalPieces[3][7]) {
 
         if (totalPieces[joueur][piece] > 0) {
             return piece;
-        } else {
-            printf("\nVous n'avez plus de %s.\n", reponsePiece);
         }
+        printf("\nVous n'avez plus de %s.\n", reponsePiece);
     }
 }
 
@@ -246,7 +245,7 @@ void demanderPosition(int tailleEchiquier, int *x, int *y) {
  * @param board Plateau de jeu (tableau 2D de cases)
  * @return Couleur du joueur suivant (BLANC ou NOIR)
  */
-int tour_joueur_poser_piece(int joueur, int taille, int modeJeu, int* roiPose, int totalPieces[3][7], Case **board, int ) {
+int tour_joueur_poser_piece(int joueur, int taille, int modeJeu, int* roiPose, int totalPieces[3][7], Case **board) {
     TypePiece piece = demanderPiece(joueur, totalPieces);
     int x, y;
 
