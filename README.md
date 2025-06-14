@@ -5,7 +5,7 @@ Par Manon Hubert et Julien Oudot
 
 Fonctionne proprement sur Linux et Windows
 Le .zip rendu dans le projet contient le code (.c et .h), les instructions de compliations (CMakeLists.txt), ce README.md.
-On a pas réussi à supprimer le gitignore gitignore mais le .idea est seulement sur github seulement
+On a pas réussi à supprimer le gitignore mais le .idea est seulement sur github seulement
 
 Affichage légèremment plus propre en changeant la police de la console par une police monospacée type consolas
 
