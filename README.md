@@ -3,7 +3,9 @@
 Par Manon Hubert et Julien Oudot
 
 
-Fonctionne sur Linux et Windows
+Fonctionne proprement sur Linux et Windows
+Le .zip rendu dans le projet contient le code (.c et .h), les instructions de compliations (CMakeLists.txt), ce README.md.
+On a laissé le gitignore et .idea sur github seulement
 
 Affichage légèremment plus propre en changeant la police de la console par une police monospacée type consolas
 
