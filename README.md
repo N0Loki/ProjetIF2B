@@ -3,7 +3,7 @@
 Par Manon Hubert et Julien Oudot
 
 
-Fonctionne sur proprement sur Linux et Windows
+Fonctionne proprement sur Linux et Windows
 
 Affichage légèremment plus propre en changeant la police de la console par une police monospacée type consolas
 
